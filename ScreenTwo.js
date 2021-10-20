@@ -50,6 +50,7 @@ export default function ScreenTwo() {
         style={styles.note}
         placeholder="e.g: My secret note"
         onChangeText={(text) => setNote(text)}
+        multiline={true} //Creates a multiline text input
       />
       <Separator />
       <Text>Type a PIN to protect your note: </Text>
