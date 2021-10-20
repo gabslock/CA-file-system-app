@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 
-//creating a constant to give space between components
+//creating a constant to create space between components
 const Separator = () => <View style={styles.separator} />;
 
 export default function ScreenOne({ navigation }) {
@@ -9,6 +9,7 @@ export default function ScreenOne({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to My Secret Notepad!</Text>
       <Separator />
+      {/* Image component with the source on a website */}
       <Image
         source={{
           uri: "https://media.istockphoto.com/vectors/unlock-icon-silhouette-vector-id600090774?b=1&k=20&m=600090774&s=170667a&w=0&h=jOsbvaaRIQXwFF2MBt9TEvGHvEz9raZKYjXNHKfdEo0=",

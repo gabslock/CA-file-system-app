@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import { StyleSheet, Text, View, Button, TextInput, Image } from "react-native";
 
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default function ScreenTwo() {
-  //creating a constant to give space between components
+  //creating a constant to create space between components
   const Separator = () => <View style={styles.separator} />;
 
   //Creating constants to receive the information from the user
@@ -32,16 +32,25 @@ export default function ScreenTwo() {
 
   return (
     <View style={styles.container}>
-      <Text>Create a new note.</Text>
+      <Text style={{ fontWeight: "bold" }}>Create a new note.</Text>
+      <Separator />
+      {/* Image component with the source on a website */}
+      <Image
+        source={{
+          uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Icon-notepad.svg/1200px-Icon-notepad.svg.png",
+        }}
+        style={{ width: 100, height: 100 }}
+      />
+      <Separator />
       <Text>Type your note here: </Text>
       <Separator />
       <TextInput
-        style={styles.input}
-        placeholder="e.g: My secret information"
+        style={styles.note}
+        placeholder="e.g: My secret note"
         onChangeText={(text) => setNote(text)}
       />
       <Separator />
-      <Text>Type a PIN to access your note: </Text>
+      <Text>Type a PIN to protect your note: </Text>
       <Separator />
       <TextInput
         style={styles.input}
@@ -66,7 +75,16 @@ const styles = StyleSheet.create({
     height: 25,
     borderColor: "gray",
     borderWidth: 1,
-    justifyContent: "space-between",
+    justifyContent: "center",
+  },
+
+  //Style for the user input (note)
+  note: {
+    height: 50,
+    width: 300,
+    borderColor: "gray",
+    borderWidth: 1,
+    justifyContent: "center",
   },
 
   //Separator styling
