@@ -12,6 +12,7 @@ export default function ScreenThree() {
   const [key, setKey] = React.useState("");
   const [value, setValue] = React.useState("");
 
+  //Function to retrieve data
   const getValue = () => {
     AsyncStorage.getItem(key).then((value) => {
       setValue(value);

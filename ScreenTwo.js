@@ -12,18 +12,20 @@ export default function ScreenTwo() {
   const [key, setKey] = React.useState("");
   const [value, setValue] = React.useState("");
 
+  //Function to store data
   const saveValue = () => {
     if (note) {
       AsyncStorage.setItem(key, note);
       setNote("");
       //Alert after the user press the button
-      alert("Note created");
+      alert("Note successfully created");
     } else {
       //Alert in case the user do not fill the TextInput component
-      alert("Please fill the blank spaces");
+      alert("Please insert some text");
     }
   };
 
+  //Function to retrieve data
   const getValue = () => {
     AsyncStorage.getItem(key).then((value) => {
       setValue(value);
