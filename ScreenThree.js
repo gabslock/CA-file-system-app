@@ -1,16 +1,23 @@
+//ScreenThree.js is the section where the user can read a saved note
 import React from "react";
 import { StyleSheet, Text, View, Button, TextInput, Image } from "react-native";
 
+//Importing AsyncStorage to use the FileSystem feature
 import AsyncStorage from "@react-native-community/async-storage";
+
+/*Reference of the AsyncStorage code used and modified: 
+Lirs Tech Tips
+https://www.youtube.com/watch?v=oXsTkvxHeYw
+*/
 
 export default function ScreenThree() {
   //creating a constant to create space between components
   const Separator = () => <View style={styles.separator} />;
 
   //Creating constants to retrieve the information that user provided before
-  const [note, setNote] = React.useState("");
-  const [key, setKey] = React.useState("");
-  const [value, setValue] = React.useState("");
+  const [note, setNote] = React.useState(""); //Note that the user will write
+  const [key, setKey] = React.useState(""); //Key value that will work as a PIN
+  const [value, setValue] = React.useState(""); //Const to read the notes after saving them
 
   //Function to retrieve data
   const getValue = () => {
@@ -33,12 +40,14 @@ export default function ScreenThree() {
       <Separator />
       <Text>Type the PIN of the note you want to access: </Text>
       <Separator />
+      {/* Input box for the user to input the PIN of the file */}
       <TextInput
         style={styles.input}
         placeholder="e.g: key16@"
         onChangeText={(text) => setKey(text)}
       />
       <Separator />
+      {/* Button the calls the getValue function and show the note according to the PIN given */}
       <Button title="Read note" onPress={getValue} />
       <Separator />
       <Text style={styles.output}>{value}</Text>

@@ -1,16 +1,23 @@
+//ScreenTwo.js is the section where the user can save a new note
 import React from "react";
 import { StyleSheet, Text, View, Button, TextInput, Image } from "react-native";
 
+//Importing AsyncStorage to use the FileSystem feature
 import AsyncStorage from "@react-native-community/async-storage";
 
+/*Reference of the AsyncStorage code used and modified: 
+Lirs Tech Tips
+https://www.youtube.com/watch?v=oXsTkvxHeYw
+*/
+
 export default function ScreenTwo() {
-  //creating a constant to create space between components
+  //Creating a constant to create space between components
   const Separator = () => <View style={styles.separator} />;
 
   //Creating constants to receive the information from the user
-  const [note, setNote] = React.useState("");
-  const [key, setKey] = React.useState("");
-  const [value, setValue] = React.useState("");
+  const [note, setNote] = React.useState(""); //Note that the user will write
+  const [key, setKey] = React.useState(""); //Key value that will work as a PIN
+  const [value, setValue] = React.useState(""); //Const to read the notes after saving them
 
   //Function to store data
   const saveValue = () => {
@@ -46,6 +53,7 @@ export default function ScreenTwo() {
       <Separator />
       <Text>Type your note here: </Text>
       <Separator />
+      {/* Input box that will change the const note */}
       <TextInput
         style={styles.note}
         placeholder="e.g: My secret note"
@@ -55,12 +63,14 @@ export default function ScreenTwo() {
       <Separator />
       <Text>Type a PIN to protect your note: </Text>
       <Separator />
+      {/* Input box that will change the const key */}
       <TextInput
         style={styles.input}
         placeholder="key16@"
         onChangeText={(text) => setKey(text)}
       />
       <Separator />
+      {/* Button to call the saveValue function and create the note */}
       <Button title="Create note" onPress={saveValue} />
     </View>
   );

@@ -1,7 +1,8 @@
+//ScreenOne.js is the welcome section of the application
 import React from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 
-//creating a constant to create space between components
+//Creating a constant to create space between components
 const Separator = () => <View style={styles.separator} />;
 
 export default function ScreenOne({ navigation }) {
@@ -17,6 +18,7 @@ export default function ScreenOne({ navigation }) {
         style={{ width: 100, height: 100 }}
       />
       <Separator />
+      {/* Buttons to navigate between the two other screens */}
       <Text style={styles.text}>Create notes that only you can find.</Text>
       <Separator />
       <Button
