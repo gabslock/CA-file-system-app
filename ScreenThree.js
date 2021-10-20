@@ -21,7 +21,7 @@ export default function ScreenThree() {
       <View style={styles.container}>
         <Text>Read your note.</Text>
 
-        <Text>Type the key of the note you want to access: </Text>
+        <Text>Type the PIN of the note you want to access: </Text>
 
         <TextInput 
           style={styles.input}
@@ -41,6 +41,7 @@ export default function ScreenThree() {
     );
   }
   
+  //Style sheet for components 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
