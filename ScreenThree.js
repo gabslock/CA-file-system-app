@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
-  //
   output: {
     margin: "20px",
     justifyContent: "space-between",

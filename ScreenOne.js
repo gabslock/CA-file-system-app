@@ -46,11 +46,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    // padding: 100,
   },
   title: {
     margin: "10px",
-    // borderBottomWidth: 1,
     justifyContent: "space-between",
 
     fontWeight: "bold",
@@ -58,9 +56,6 @@ const styles = StyleSheet.create({
   text: {
     margin: "10px",
     justifyContent: "space-between",
-
-    // borderWidth: 10,
-    // borderColor: "red",
   },
 
   //Separator styling
